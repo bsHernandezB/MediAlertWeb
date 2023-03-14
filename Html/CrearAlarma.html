@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="../css/crearalarma.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <script src="../script/funciones.js"></script>
+    </head>
+    <body style="margin: 0;background-color: #4BC3FB;">
+        <header class="mdl-layout__header">
+          <a onclick="moveToPrincipal()" class="linkheader"><h1 style="font-size: 24px;font-family: 'Roboto', sans-serif;font-weight: normal;">Inicio</h1></a>
+          <a onclick="moveToModificar()" class="linkheader"><h1 style="font-size: 24px;font-family: 'Roboto', sans-serif;font-weight: normal;padding-left: 54px;">Modificar Alarmas</h1></a>
+          <a onclick="moveToHistorial()" class="linkheader"><h1 style="font-size: 24px;font-family: 'Roboto', sans-serif;font-weight: normal;padding-left: 54px;">Historial</h1></a>
+          <div class="mdc-card__media-content" style="position: relative;padding-left: 65%;">
+            <div class="my-card__media_header mdc-card__media mdc-card__media--16-9" style="margin-top: 10px;" onclick="moveToIndex()"></div>
+          </div>
+        </header>  
+
+        <div class="mdc-dialog" id="dialogSounds" style="display: none;" onclick="closeDialogSounds()">
+          <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface"
+              onclick="closeDialogSounds()"
+              role="alertdialog"
+              aria-modal="true"
+              aria-labelledby="my-dialog-title"
+              aria-describedby="my-dialog-content" style="width: 320px;height: 560px;background-color:#4BC3FB;">
+              <div class="mdc-dialog__content" id="my-dialog-content" style="padding: 4px;">
+                <ul class="mdc-list mdc-list--avatar-list" style="height: 536px;">
+                  <li class="mdc-list-item" style="height: 80px;border-bottom: 1px solid;">
+                    <div class="mdc-card__media-content" style="position: relative;">
+                      <div class="my-card__media-dialog mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;"></div>
+                    </div>
+                    <span class="mdc-list-item__text" style="margin-left: 50px;margin-top: 20px;">Sonido 1</span>
+                  </li>
+                  <li class="mdc-list-item" style="height: 80px;border-bottom: 1px solid;">
+                    <div class="mdc-card__media-content" style="position: relative;">
+                      <div class="my-card__media-dialog mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;"></div>
+                    </div>
+                    <span class="mdc-list-item__text" style="margin-left: 50px;margin-top: 20px;">Sonido 2</span>
+                  </li>
+                  <li class="mdc-list-item" style="height: 80px;border-bottom: 1px solid;">
+                    <div class="mdc-card__media-content" style="position: relative;">
+                      <div class="my-card__media-dialog mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;"></div>
+                    </div>
+                    <span class="mdc-list-item__text" style="margin-left: 50px;margin-top: 20px;">Sonido 3</span>
+                  </li>
+                  <li class="mdc-list-item" style="height: 80px;border-bottom: 1px solid;">
+                    <div class="mdc-card__media-content" style="position: relative;">
+                      <div class="my-card__media-dialog mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;"></div>
+                    </div>
+                    <span class="mdc-list-item__text" style="margin-left: 50px;margin-top: 20px;">Sonido 4</span>
+                  </li>
+                  <li class="mdc-list-item" style="height: 80px;border-bottom: 1px solid;">
+                    <div class="mdc-card__media-content" style="position: relative;">
+                      <div class="my-card__media-dialog mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;"></div>
+                    </div>
+                    <span class="mdc-list-item__text" style="margin-left: 50px;margin-top: 20px;">Sonido 5</span>
+                  </li>
+                  <li class="mdc-list-item" style="height: 80px;border-bottom: 1px solid;">
+                    <div class="mdc-card__media-content" style="position: relative;">
+                      <div class="my-card__media-dialog mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;"></div>
+                    </div>
+                    <span class="mdc-list-item__text" style="margin-left: 50px;margin-top: 20px;">Sonido 6</span>
+                  </li>
+                  <li class="mdc-list-item" style="height: 80px;border-bottom: 1px solid;">
+                    <div class="mdc-card__media-content" style="position: relative;">
+                      <div class="my-card__media-dialog mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;"></div>
+                    </div>
+                    <span class="mdc-list-item__text" style="margin-left: 50px;margin-top: 20px;">Sonido 7</span>
+                  </li>
+                  <!-- ... -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mdc-dialog__scrim"></div>
+        </div>
+
+        <table style="width: 100%;height: 100%;">
+          <tr>
+              <td style="width: 74%;">
+                <div class="mdc-card panelleft">
+                  <div class="mdc-card__media-content" style="margin-top: 24px;margin-left: 24px;margin-right: 24px;position: absolute;">
+                    <table style="width: 100%;height: 376px;" colspan="3">
+                      <tr>
+                        <td colspan="1" style="width: 352px;height: 32px;background-color: #4BC3FB;">
+                            <label style="font-family: 'Roboto', sans-serif;font-size: 24px;color: black;">Fecha de Inicio:</label>
+                        </td>
+                        <td colspan="1"></td>
+                        <td colspan="1" style="width: 352px;height: 32px;background-color: #4BC3FB;">
+                            <label style="font-family: 'Roboto', sans-serif;font-size: 24px;color: black;">Fecha Fin:</label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="1" style="width: 352px;height: 48px;background-color: #4BC3FB;">
+                            <input type="datetime-local" class="mdc-button mdc-button--raised mdc-button--leading" style="border: 1px solid;border-color: black;height: 32px;margin-left: 200px;padding-left: 40px;width: 132px;color: black;">
+                        </td>
+                        <td colspan="1"></td>
+                        <td colspan="1" style="width: 352px;height: 48px;background-color: #4BC3FB;">
+                            <input type="datetime-local" class="mdc-button mdc-button--raised mdc-button--leading" style="border: 1px solid;border-color: black;height: 32px;margin-left: 200px;padding-left: 40px;width: 132px;color: black;">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="1" style="width: 352px;height: 40px;background-color: #255F7A;">
+                        
+                        </td>
+                        <td colspan="1"></td>
+                        <td colspan="1" style="width: 352px;height: 40px;background-color: #255F7A;"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="1" style="width: 352px;height: 32px;background-color: #4BC3FB;">
+                            <label style="font-family: 'Roboto', sans-serif;font-size: 24px;color: black;">El medicamento se toma cada:</label>
+                        </td>
+                        <td colspan="1"></td>
+                        <td colspan="1" style="width: 352px;height: 32px;background-color: #4BC3FB;">
+                            <label style="font-family: 'Roboto', sans-serif;font-size: 24px;color: black;">Sonido de Alarma:</label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="1" style="width: 352px;height: 48px;background-color: #4BC3FB;">
+                            <div class="mdc-card__actions">
+                                <label class="mdc-text-field mdc-text-field--outlined" style="height: 32px;margin-left: 210px;border-radius: 9px;width: 100px;">
+                                  <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id" placeholder="Horas">
+                                </label>
+                            </div>
+                        </td>
+                        <td colspan="1"></td>
+                        <td colspan="1" style="width: 352px;height: 48px;background-color: #4BC3FB;text-align: right;padding-right: 20px;">
+                            <button class="mdc-button mdc-button--raised mdc-button--leading" onclick="showDialogSounds()" style="border: 1px solid;border-color: black;height: 48px;width: 48px;border-radius: 4px;">
+                                <span class="mdc-button__ripple"></span>
+                                <i class="material-icons mdc-button__icon" aria-hidden="true" style="color: black;font-size: 50px;width: 50px;height: 50px;margin: 0;"
+                                  >notifications</i
+                                >
+                                <span class="mdc-button__label"></span>
+                              </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="1" style="width: 352px;height: 40px;background-color: #255F7A;">
+                        
+                        </td>
+                        <td colspan="1"></td>
+                        <td colspan="1" style="width: 352px;height: 40px;background-color: #255F7A;"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" style="width: 352px;height: 32px;background-color: #4BC3FB;">
+                            <label style="font-family: 'Roboto', sans-serif;font-size: 24px;color: black;">Mensaje de Notificación:</label>
+                        </td>
+                        <td colspan="1" style="width: 352px;height: 32px;background-color: #255F7A;">
+                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" style="width: 352px;height: 104px;background-color: #4BC3FB;">
+                            <div class="mdc-card__actions">
+                                <label class="mdc-text-field mdc-text-field--outlined" style="margin: 0;height: 90px;width: 662px;">
+                                    <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id" placeholder="Maximo 240 caracteres...">
+                                </label>
+                            </div>
+                        </td>
+                        <td colspan="1" style="width: 352px;height: 104px;background-color: #255F7A;">
+                          
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div class="mdc-card__media-content" style="margin-top: 520px;position: absolute;">
+                    <table style="width: 100%;height: 64px;border-top: 1px solid;">
+                      <tr>
+                        <td style="width: 80%;">
+                            <div class="mdc-card__actions">
+                                <label class="mdc-text-field-footer mdc-text-field--outlined">
+                                  <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id" placeholder="Nombre de alarma">
+                                </label>
+                              </div>
+                        </td>
+                        <td style="width: 20%;">
+                          <div id="buttonSave" class="mdc-card__actions" style="margin-right: 30px;display: flex;">
+                            <button class="mdc-button mdc-button--raised" onclick="cambiarkey()">
+                              <span class="mdc-button__label">Guardar</span>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </td>
+              <td style="width: 26%;">
+                  <div class="mdc-card panelright" style="display: block;">
+                    
+                  </div>
+              </td>
+          </tr>
+        </table>
+        
+      </body>
+</html>

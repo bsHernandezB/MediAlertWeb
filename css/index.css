@@ -1,0 +1,86 @@
+
+.mdl-layout__header{
+    z-index: 10;
+    width: auto;
+    margin: 0;
+    padding-left: 44px;
+    height: 64px;
+    background-color: #255F7A;
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+}
+
+.mdc-card{
+    width: 389px;
+    height: 368px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-top: 72px;
+    background-color: #255F7A;
+    border-radius: 23px;
+}
+
+.my-card__media {
+    height: 170px;
+    width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("../img/pildora.png");
+    margin-top: 30px;
+}
+
+.mdc-button{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+    text-transform: capitalize;
+    width: 160px;
+    height: 48px;
+}
+
+.mdc-button--raised:not(:disabled){
+    background-color: #4BC3FB;
+}
+
+.mdc-button__label{
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    color: black;
+}
+
+.mdc-text-field{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    width: 240px;
+    height: 56px;
+    border: 1px solid;
+    border-radius: 16px;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input{
+    color: white;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.74;
+    text-align: center;
+    color: #989898;
+}
+
+.mdc-card__media-content{
+    top: inherit;
+    left: inherit;
+}
+
+.mdc-fab{
+    width: 40px;
+    height: 40px;
+    background-color: #4BC3FB;
+}

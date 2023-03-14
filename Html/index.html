@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <script src="../script/funciones.js"></script>
+    </head>
+    <body style="margin: 0;background-color: #4BC3FB;">
+      <header class="mdl-layout__header">
+        <h1 style="font-size: 24px;font-family: 'Roboto', sans-serif;font-weight: normal;">MediAlert</h1>
+      </header>  
+
+      <div class="mdc-card">
+        <div class="my-card__media mdc-card__media mdc-card__media--16-9">
+          <div class="mdc-card__media-content">
+            <button class="mdc-fab" aria-label="Add">
+              <div class="mdc-fab__ripple"></div>
+              <span class="mdc-fab__icon material-icons" style="color: black;">add</span>
+            </button>
+          </div>
+
+        </div>
+        <div class="mdc-card__actions">
+          <label class="mdc-text-field mdc-text-field--outlined">
+            <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id" placeholder="ESCRIBE TU NOMBRE">
+          </label>
+        </div>
+        <div class="mdc-card__actions">
+          <button class="mdc-button mdc-button--raised" onclick="moveToPrincipal()">
+            <span class="mdc-button__label">Continuar</span>
+          </button>
+        </div>
+      </div>
+
+    </body>
+</html>

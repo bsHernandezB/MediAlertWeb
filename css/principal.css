@@ -1,0 +1,94 @@
+.mdl-layout__header{
+    z-index: 10;
+    width: auto;
+    margin: 0;
+    padding-left: 44px;
+    height: 64px;
+    background-color: #255F7A;
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+}
+
+.panelleft{
+    width: auto;
+    height: 592px;
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-bottom: 24px;
+}
+
+.panelright{
+    width: auto;
+    height: 592px;
+    margin-top: 24px;
+    margin-left: 32px;
+    margin-bottom: 24px;
+    margin-right: 24px;
+}
+
+.mdc-card{
+    display: flex;
+    background-color: #255F7A;
+    border-radius: 26px;
+}
+
+.linkheader{
+    cursor: pointer;
+    color: white;
+    opacity: 0.5;
+}
+
+.linkheader:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+.mdc-button{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+    text-transform: capitalize;
+    width: 292px;
+    height: 48px;
+}
+
+.mdc-button--raised:not(:disabled){
+    background-color: #4BC3FB;
+}
+
+.mdc-button__label{
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    color: black;
+}
+
+.mdc-button--icon-leading{
+    margin-left: 0;
+    padding-right: 60px;
+    margin-top: 8px;
+}
+
+.my-card__media {
+    height: 40px;
+    width: 40px;
+    background-image: url("../img/reloj_manecillas.png");
+    position: absolute;
+}
+
+.mdc-dialog{
+    display: none;
+}
+
+.mdc-dialog__container{
+    opacity: 1;
+}
+
+.my-card__media_header {
+    height: 48px;
+    width: 48px;
+    background-image: url("../img/pildora.png");
+    position: absolute;
+    cursor: pointer;
+}

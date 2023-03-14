@@ -1,0 +1,89 @@
+.mdl-layout__header{
+    z-index: 10;
+    width: auto;
+    margin: 0;
+    padding-left: 44px;
+    height: 64px;
+    background-color: #255F7A;
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+}
+
+.panelleft{
+    width: auto;
+    height: 592px;
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-bottom: 24px;
+}
+
+.panelright{
+    width: auto;
+    height: 592px;
+    margin-top: 24px;
+    margin-left: 32px;
+    margin-bottom: 24px;
+    margin-right: 24px;
+}
+
+.mdc-card{
+    display: flex;
+    background-color: #255F7A;
+    border-radius: 26px;
+}
+
+.linkheader{
+    cursor: pointer;
+    color: white;
+    opacity: 0.5;
+}
+
+.linkheader:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+.mdc-text-field{
+    margin-left: 16px;
+    margin-right: 24px;
+    width: 100%;
+    height: 32px;
+    border: 1px solid;
+    border-radius: 16px;
+    align-items: center;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input{
+    color: white;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    opacity: 0.74;
+    text-align: center;
+    color: #989898;
+}
+
+.mdc-form-field{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    color: white;
+    padding-left: 24px;
+    padding-top: 24px;
+}
+
+.mdc-checkbox{
+    margin-left: 15px;
+}
+
+.my-card__media_header {
+    height: 48px;
+    width: 48px;
+    background-image: url("../img/pildora.png");
+    position: absolute;
+    cursor: pointer;
+}

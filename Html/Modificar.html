@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="../css/modificar.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <script src="../script/funciones.js"></script>
+
+        <script>
+          window.onload = function() {
+            selectOptions();
+          };
+        </script>
+    </head>
+    <body style="margin: 0;background-color: #4BC3FB;">
+        <header class="mdl-layout__header">
+          <a onclick="moveToPrincipal()" class="linkheader"><h1 style="font-size: 24px;font-family: 'Roboto', sans-serif;font-weight: normal;">Inicio</h1></a>
+          <a onclick="" class="linkheader" style="opacity: 1;"><h1 style="font-size: 24px;font-family: 'Roboto', sans-serif;font-weight: normal;padding-left: 54px;">Modificar Alarmas</h1></a>
+          <a onclick="moveToHistorial()" class="linkheader"><h1 style="font-size: 24px;font-family: 'Roboto', sans-serif;font-weight: normal;padding-left: 54px;">Historial</h1></a>
+          <div class="mdc-card__media-content" style="position: relative;padding-left: 65%;">
+            <div class="my-card__media_header mdc-card__media mdc-card__media--16-9" style="margin-top: 10px;" onclick="moveToIndex()"></div>
+          </div>
+        </header>  
+
+        <table style="width: 100%;height: 100%;">
+          <tr>
+              <td style="width: 74%;">
+                <div class="mdc-card panelleft">
+                  <div class="mdc-card__media-content" style="margin-left: 24px;position: absolute;">
+                    <table style="width: 100%;height: 104px;">
+                      <tr>
+                        <td style="width: 1px;">
+                          <select name="options" id="options" onchange="selectOptions()" class="mdc-button mdc-button--raised" style="background-color: #4BC3FB;color: black;height: 56px;width: 320px;height: 56px;font-size: 18px;font-family: 'Roboto', sans-serif;font-weight: normal;color: black;">
+                            <option selected value="0">Seleccione una opción</option>
+                            <option value="1">Aumentar horas de alarmas</option>
+                            <option value="2">Disminuir horas de alarmas</option>
+                            <option value="3">Eliminar alarmas</option>
+                          </select>
+                        </td>
+                        <td>
+                          <div id="textfieldHours" class="mdc-card__actions" style="display: none;">
+                            <label class="mdc-text-field mdc-text-field--outlined">
+                              <input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id" placeholder="Horas">
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div class="mdc-card__media-content" style="margin-top: 520px;position: absolute;">
+                    <table style="width: 100%;height: 64px;border-top: 1px solid;">
+                      <tr>
+                        <td>
+                          <div id="buttonExecute" class="mdc-card__actions" style="margin-right: 30px;display: none;">
+                            <button class="mdc-button mdc-button--raised" onclick="modifyAlarms()">
+                              <span class="mdc-button__label">Ejecutar</span>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </td>
+              <td style="width: 26%;">
+                  <div class="mdc-card panelright" style="display: block;">
+                    <table style="width: 100%;padding-top: 16px;">
+                      <tr id="trA1" style="height: 82px;display: block;">
+                        <td style="padding-left: 16px;padding-right: 16px;">
+                          <div class="mdc-card" style="background-color: #4BC3FB;width: auto;height: 64px;border-radius: 12px;">
+                            <table style="width: 100%;height: 100%;">
+                              <tr>
+                                <td>
+                                  <div class="mdc-card__media-content">
+                                    <div class="my-card__media mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;margin-left: 16px;"></div>
+                                  </div>
+                                  <div class="mdc-form-field">
+                                    <label for="checkbox-1">Alarma 1</label>
+                                    <div class="mdc-checkbox">
+                                      <input type="checkbox"
+                                             class="mdc-checkbox__native-control"
+                                             id="checkbox-1"/>
+                                      <div class="mdc-checkbox__background" style="border-color:black;background-color: transparent;">
+                                        <svg class="mdc-checkbox__checkmark"
+                                             viewBox="0 0 24 24" style="color: black;">
+                                          <path class="mdc-checkbox__checkmark-path"
+                                                fill="none"
+                                                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                      </div>
+                                      <div class="mdc-checkbox__ripple"></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="trA2" style="height: 82px;display: block;">
+                        <td style="padding-left: 16px;padding-right: 16px;">
+                          <div class="mdc-card" style="background-color: #4BC3FB;width: auto;height: 64px;border-radius: 12px;">
+                            <table style="width: 100%;height: 100%;">
+                              <tr>
+                                <td>
+                                  <div class="mdc-card__media-content">
+                                    <div class="my-card__media mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;margin-left: 16px;"></div>
+                                  </div>
+                                  <div class="mdc-form-field">
+                                    <label for="checkbox-1">Alarma 2</label>
+                                    <div class="mdc-checkbox">
+                                      <input type="checkbox"
+                                             class="mdc-checkbox__native-control"
+                                             id="checkbox-2"/>
+                                      <div class="mdc-checkbox__background" style="border-color:black;background-color: transparent;">
+                                        <svg class="mdc-checkbox__checkmark"
+                                             viewBox="0 0 24 24" style="color: black;">
+                                          <path class="mdc-checkbox__checkmark-path"
+                                                fill="none"
+                                                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                      </div>
+                                      <div class="mdc-checkbox__ripple"></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="trA3" style="height: 82px;display: block;">
+                        <td style="padding-left: 16px;padding-right: 16px;">
+                          <div class="mdc-card" style="background-color: #4BC3FB;width: auto;height: 64px;border-radius: 12px;">
+                            <table style="width: 100%;height: 100%;">
+                              <tr>
+                                <td>
+                                  <div class="mdc-card__media-content">
+                                    <div class="my-card__media mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;margin-left: 16px;"></div>
+                                  </div>
+                                  <div class="mdc-form-field">
+                                    <label for="checkbox-1">Alarma 3</label>
+                                    <div class="mdc-checkbox">
+                                      <input type="checkbox"
+                                             class="mdc-checkbox__native-control"
+                                             id="checkbox-3"/>
+                                      <div class="mdc-checkbox__background" style="border-color:black;background-color: transparent;">
+                                        <svg class="mdc-checkbox__checkmark"
+                                             viewBox="0 0 24 24" style="color: black;">
+                                          <path class="mdc-checkbox__checkmark-path"
+                                                fill="none"
+                                                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                      </div>
+                                      <div class="mdc-checkbox__ripple"></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="trA4" style="height: 82px;display: block;">
+                        <td style="padding-left: 16px;padding-right: 16px;">
+                          <div class="mdc-card" style="background-color: #4BC3FB;width: auto;height: 64px;border-radius: 12px;">
+                            <table style="width: 100%;height: 100%;">
+                              <tr>
+                                <td>
+                                  <div class="mdc-card__media-content">
+                                    <div class="my-card__media mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;margin-left: 16px;"></div>
+                                  </div>
+                                  <div class="mdc-form-field">
+                                    <label for="checkbox-1">Alarma 4</label>
+                                    <div class="mdc-checkbox">
+                                      <input type="checkbox"
+                                             class="mdc-checkbox__native-control"
+                                             id="checkbox-4"/>
+                                      <div class="mdc-checkbox__background" style="border-color:black;background-color: transparent;">
+                                        <svg class="mdc-checkbox__checkmark"
+                                             viewBox="0 0 24 24" style="color: black;">
+                                          <path class="mdc-checkbox__checkmark-path"
+                                                fill="none"
+                                                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                      </div>
+                                      <div class="mdc-checkbox__ripple"></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="trA5" style="height: 82px;display: block;">
+                        <td style="padding-left: 16px;padding-right: 16px;">
+                          <div class="mdc-card" style="background-color: #4BC3FB;width: auto;height: 64px;border-radius: 12px;">
+                            <table style="width: 100%;height: 100%;">
+                              <tr>
+                                <td>
+                                  <div class="mdc-card__media-content">
+                                    <div class="my-card__media mdc-card__media mdc-card__media--16-9" style="margin-top: 12px;margin-left: 16px;"></div>
+                                  </div>
+                                  <div class="mdc-form-field">
+                                    <label for="checkbox-1">Alarma 5</label>
+                                    <div class="mdc-checkbox">
+                                      <input type="checkbox"
+                                             class="mdc-checkbox__native-control"
+                                             id="checkbox-5"/>
+                                      <div class="mdc-checkbox__background" style="border-color:black;background-color: transparent;">
+                                        <svg class="mdc-checkbox__checkmark"
+                                             viewBox="0 0 24 24" style="color: black;">
+                                          <path class="mdc-checkbox__checkmark-path"
+                                                fill="none"
+                                                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                      </div>
+                                      <div class="mdc-checkbox__ripple"></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+              </td>
+          </tr>
+        </table>
+        
+      </body>
+</html>
